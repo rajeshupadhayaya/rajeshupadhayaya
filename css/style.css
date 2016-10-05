@@ -1,0 +1,66 @@
+.nav, .pagination, .carousel, .panel-title a { 
+	cursor: pointer; 
+}
+
+/* body{
+	background-color:C4C3C6;
+} */
+body {
+        /* font-family: 'Dosis', serif; */
+		font-family: 'Source Sans Pro', sans-serif;
+        /* font-size: 48px; */
+      }
+	  
+	  
+
+
+footer{
+	position:fixed;
+	width:100%;
+	padding:5px;
+	top:95%;
+	background-color: 544A4B;
+	color:#fff;
+	height:5%;
+}
+
+section{
+	margin:10px;
+}
+
+.jumbotron{
+		
+		
+}
+
+#banner h2{
+		margin:0;
+}
+.banner{
+		padding:15px;
+		background-color:#F7D358;
+}
+
+.download-btn{
+		
+		margin-left: 5px;
+}
+.icon-image{
+		width: 30px;
+		height: 30px;
+		
+}
+
+.navbar-nav li a:hover{
+		background:#3e5771;
+		color:white;
+		transition: background 0.25s ease;
+}
+
+.social-btn{
+		margin:15px;
+}
+
+.social-btn .btn{
+		width:100%;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "rajesh",
+  "description": "my personal website",
+  "main": "index.html",
+  "authors": [
+    "Rajesh Upadhayaya <rajeshupadhayaya@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "rajeshupadhayaya"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-timeline": "^1.7.0",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}

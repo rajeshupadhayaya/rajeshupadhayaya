@@ -1,0 +1,265 @@
+<html ng-app="app">
+	<head>
+		<title>
+			Rajesh Upadhayaya
+		</title>
+	
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-timeline/dist/angular-timeline.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-timeline/dist/angular-timeline-animations.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-timeline/dist/angular-timeline-bootstrap.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/angular-timeline-bootstrap.css"> -->
+		<link rel="stylesheet" type="text/css" href="css/style.css"> 
+		
+	</head>
+	
+	<body>
+		
+		<div class="text-center " id="banner"><h2 class="banner">Welcome To My Page!!</h2></div>
+		<nav id="mainNav" class="navbar navbar-default ">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle= "collapse" data-target="#bs-navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#/">Rajesh Upadhayaya</a>
+				</div>
+				
+				<nav class="navbar-collapse collapse" id="bs-navbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#education" id="1">Education</a></li>
+						<li><a href="#experience" id="2">Experience</a></li>
+						<li><a href="#contact" id="3">Contact</a></li>
+						
+					</ul>
+				</nav>
+				
+			</div>
+		</nav >
+		
+		<div ng-view class="container"></div>
+		
+		<footer class="text-center">
+			Created by Rajesh Upadhayaya
+		</footer>
+		
+	</body>
+	
+	
+	<script type="text/ng-template" id="home">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-4">
+					<img src="image/pic.png"></img>
+				</div>
+				<div class="col-md-8">
+					<h2>
+						About Me
+					</h2>
+					</p>
+						I am a software developer at Infosy Ltd. from last 2.4 year.</br>
+						I am working as a Mainframe Developer and working in the same the project since 2014. This project is a online real time payment portal for internal employees and also provide webservice base services.</br>
+						This allow my client to expand its business more and more in future to add more agent and expand the business.</br>
+						I am also a quick learner and eager to learn more and more technologies.</br>
+						The technologies I know till now are:
+						COBOL, JCL, CICS, PHP, MYSQL, PYTHON, DJANGO, HTML, CSS, JAVASCRIPT, ANGUJARJS, BOOTSTRAP, SHAREPOINT
+						
+					</P>
+					
+					<div>
+						You can download my resume by clicking any of the below button:
+						<section class="row">
+							<div class="col-md-6">
+								<a href="document/resume.pdf" download="Rajesh_resume.pdf">
+									<button class="btn btn-primary" >
+										<img class="icon-image" src="image/pdf_image.png">
+										<span class="download-btn">PDF format</span>
+									</button>
+								</a>
+							</div>
+							<div class="col-md-6">
+								<a href="document/resume.docx" download="Rajesh_resume.docx">
+									<button class="btn btn-primary" >
+										<img  class="icon-image" src="image/ms-word.png">
+										<span class="download-btn"> Doc format</span>
+									</button>
+								</a>
+							</div>
+								
+						</section>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</script>
+	
+	<script type="text/ng-template" id="education">
+		<div class="jumbotron">
+			<timeline>
+				
+				<timeline-event  ng-repeat="info in eduInfo" side="alternate">
+					<timeline-badge class="info bounce-in">
+						
+						<i>{{info.year}}</i>
+					</timeline-badge>
+					<timeline-panel class="info bounce-in">
+						<timeline-heading>
+							<h4>{{info.title}}</h4>
+						</timeline-heading>
+						{{info.content}}
+					</timeline-panel>
+				</timeline-event>
+			</timeline>
+		</div>
+		
+	</script>
+	<script type="text/ng-template" id="experience">
+		<div class="jumbotron">
+				<h2>Work Experience</h2>
+				{{expDetails.exp}}</br>
+			{{expDetails.Details}}</br>
+		</div>
+		
+	</script>
+	<script type="text/ng-template" id="contact">
+		<div class="jumbotron">
+			<h2></h2>
+			<section >
+				<div class="row">
+						
+					<div class="col-md-6">
+						<h2>{{contactInfo.name}}</h2>
+						<a href="mailto:{{contactInfo.Email1}}">{{contactInfo.Email1}}</a></br>
+						<a href="mailto:{{contactInfo.Email2}}">{{contactInfo.Email2}}</a>
+					</div>
+					<div class="col-md-6 text-right">
+						<h4>Mob: {{contactInfo.Mob1}}</h4>
+						<h4>{{contactInfo.Mob2}}</h4>
+					</div>
+				</div>
+			</section>
+			<hr>
+			<section>
+				<div class="row">
+				
+					<div class="col-md-6 col-sm-6 col-lg-6">
+						<div id="contactme">
+							<form>
+								<div class="form-group">
+									<label for="name">Your Name:</label>
+									<input type="text" ng-model="contact.name" class="form-control"></input>
+								</div>
+								<div class="form-group">
+									<label for="name">Your Email:</label>
+									<input type="text" ng-model="contact.email" class="form-control"></input>
+								</div>
+								<div class="form-group">
+									<label for="name">Message for me:</label>
+									<textarea type="text" ng-model="contact.message" class="form-control" row="100"/>
+									
+								</div>
+								<div class="text-right">
+									<button class="btn btn-primary" ng-click="mailme()">Send</button>
+								</div>
+								
+							</form>
+						</div>
+						
+					</div>
+					<div class="col-md-6 col-sm-6 col-lg-6">
+						<h3>Check my profiles:</h3>
+						<div class="text-center social-btn">
+								<a href="{{contactInfo.github}}" class="btn btn-primary" target="_blank">Github</a>
+						</div>
+						<div class="text-center social-btn">
+							<a href="{{contactInfo.twitter}}" class="btn btn-primary" target="_blank">Twitter</a>
+						</div>
+						<div class="text-center social-btn">
+							<a href="{{contactInfo.facebook}}" class="btn btn-primary" target="_blank">Facebook</a>
+						</div >
+						<div class="text-center social-btn">
+							<a href="{{contactInfo.linkedin}}" class="btn btn-primary" target="_blank">Linked In</a>
+						</div>
+						
+					</div>
+					
+				</div>		
+			</section>
+			
+			<!-- <section>
+				<div class="row">
+					
+					<div class="col-md-6 text-center">
+						<a href="{{contactInfo.google}}" class="btn btn-primary" target="_blank">Google Plus</a>
+						
+					</div>
+				</div>
+			</section> -->
+			
+			
+		</div>
+		
+	</script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
+	<script src="js/jquery-canvas-sparkles.js"></script>
+	<script src="js/ui-bootstrap-tpls-1.3.2.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script>
+			$(document).ready(function(){
+			
+			<!-- $sparkle.start(".banner"); -->
+			
+			$(".banner").sparkle({
+				color: "rainbow",
+				count: 500,
+				overlap: 0,
+				speed: 0.5,
+				minSize: 4,
+				maxSize: 7,
+				direction: "both"
+			});
+			
+				$("#1").sparkle({
+					color: "rainbow",
+					count: 30,
+					overlap: 0,
+					speed: 0.5,
+					minSize: 4,
+					maxSize: 7,
+					direction: "both"
+				});
+				$("#2").sparkle({
+					color: "rainbow",
+					count: 30,
+					overlap: 0,
+					speed: 0.5,
+					minSize: 4,
+					maxSize: 7,
+					direction: "both"
+				});
+				$("#3").sparkle({
+					color: "rainbow",
+					count: 30,
+					overlap: 0,
+					speed: 0.5,
+					minSize: 4,
+					maxSize: 7,
+					direction: "both"
+				});
+			
+			})
+		</script>
+</html>
