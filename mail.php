@@ -28,10 +28,10 @@ if (isset($_POST['name']) && isset($_POST['message']) &&isset($_POST['email'])) 
         //SMTP Configuration
         $mailer->isSMTP();
         $mailer->SMTPAuth = true; //We need to authenticate
-        $mailer->Host = ' ';
+        $mailer->Host = 'smtp.sendgrid.net';
         $mailer->Port = '587';
-        $mailer->Username = ' ';
-        $mailer->Password = ' ';
+        $mailer->Username = getenv('SENDGRID_USERNAME');
+        $mailer->Password = getenv('SENDGRID_PASSWORD');
         $mailer->SMTPSecure = 'tls';
 
         //Now, send mail :
