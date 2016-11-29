@@ -19,11 +19,11 @@ controllers.controller('eduController', ['$scope','$http', function($scope,$http
 }]);
 
 controllers.controller('expController', ['$scope','$http', function($scope,$http){
-	$http.get('data/experience.json').success(function(data){
-		$scope.expDetails = data;
-	}).error(function(data,status){
-			alert(data + " " + status);
-	});
+	// $http.get('data/experience.json').success(function(data){
+		// $scope.expDetails = data;
+	// }).error(function(data,status){
+			// alert(data + " " + status);
+	// });
 
 
 }]);
