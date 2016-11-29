@@ -15,7 +15,7 @@ app.config(['$routeProvider', function($routeProvider){
 	}).
 	when('/experience',
 	{
-		templateUrl: 'experience',
+		templateUrl: 'template/experience.html',
 		controller: 'expController'
 	}).
 	when('/contact',
